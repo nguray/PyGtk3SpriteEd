@@ -127,12 +127,8 @@ class EditMode:
                 y1 = dum
 
             if (x0 > x1):
-                dum = x0
-                x0 = x1
-                x1 = dum
-                dum = y0
-                y0 = y1
-                y1 = dum
+                x0,x1 = x1,x0
+                y0,y1 = y1,y0
 
             deltax = x1 - x0
             deltay = abs(y1-y0)
