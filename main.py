@@ -1,3 +1,4 @@
+
 import sys
 import math
 
@@ -111,13 +112,13 @@ class Application(Gtk.Application):
         chooser.set_default_response(Gtk.ResponseType.OK)
         chooser.add_buttons("Cancel",Gtk.ResponseType.CANCEL)
         chooser.add_buttons("Save",Gtk.ResponseType.OK)
-        filter = Gtk.FileFilter()
-        filter.set_name("PNG files")
-        filter.add_pattern("*.png")
-        chooser.add_filter(filter)
-        filter = Gtk.FileFilter()
-        filter.set_name("All files")
-        filter.add_pattern("*")
+        pngFilter = Gtk.FileFilter()
+        pngFilter.set_name("PNG files")
+        pngFilter.add_pattern("*.png")
+        chooser.add_filter(pngFilter)
+        allFilter = Gtk.FileFilter()
+        allFilter.set_name("All files")
+        allFilter.add_pattern("*")
         chooser.add_filter(filter)
         if chooser.run() == Gtk.ResponseType.OK:
             fileName = chooser.get_filename()
